@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import PostList from "./pages/PostList";
 import CreatePost from "./pages/CreatePost";
 import PostDetails from "./pages/PostDetails";
