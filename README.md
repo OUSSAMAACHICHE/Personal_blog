@@ -5,6 +5,12 @@ Users can create, edit, view, and delete posts, filter by category, and enjoy a 
 
 ---
 
+## 🌐 Live Demo
+
+[https://personal-blog-with-react.netlify.app/](https://personal-blog-with-react.netlify.app/)
+
+---
+
 ## ✨ Features
 
 - **Create, Edit, and Delete Posts:**  
