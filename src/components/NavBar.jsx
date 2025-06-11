@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function NavBar() {
+export default function Navbar() {
     return (
         <nav >
             <ul className="flex space-x-4 bg-gray-800 p-4 text-white">

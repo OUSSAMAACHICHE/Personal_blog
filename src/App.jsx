@@ -16,21 +16,40 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import { SnackbarProvider } from "./contexts/SnackbarContext";
 
 function App() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    if (saved === "true") return true;
+    if (saved === "false") return false;
+    if (saved === null) {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    // fallback for any unexpected value
+    return false;
+  });
 
+console.log(window.matchMedia("(prefers-color-scheme: dark)"));
+
+  // Update <html> class and localStorage when dark changes
   useEffect(() => {
     if (dark) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("darkMode", JSON.stringify(dark));
   }, [dark]);
+
+  
+  // Toggle dark mode
+  const handleDarkModeToggle = () => setDark((prev) => !prev);
 
   return (
     <>
       <button
         className="fixed top-2 right-4 z-50 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow"
-        onClick={() => setDark((d) => !d)}
+        onClick={handleDarkModeToggle}
+        title="Toggle Dark Mode"
+        aria-pressed={dark}
       >
         {dark ? <LightModeIcon /> : <DarkModeIcon />}
       </button>
@@ -50,4 +69,3 @@ function App() {
 }
 
 export default App;
-// This is a simple React component that renders a heading with Tailwind CSS styles.

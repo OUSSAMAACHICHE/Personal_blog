@@ -1,7 +1,7 @@
 # My Blog
 
 A modern, responsive blog application built with **React**, **Tailwind CSS**, and **Material UI**.  
-Users can create, edit, view, and delete posts, filter by category, and enjoy a seamless dark mode experience.
+Users can create, edit, view, and delete posts, filter by category, search posts, and enjoy a seamless dark mode experience with pagination and persistent preferences.
 
 ---
 
@@ -20,16 +20,22 @@ Users can create, edit, view, and delete posts, filter by category, and enjoy a 
   Click on any post to see its full content and metadata.
 
 - **Category Filtering:**  
-  Filter posts by category using a dropdown menu.
+  Filter posts by category using a dropdown menu. The selected category is saved and restored on reload.
+
+- **Search Posts:**  
+  Instantly search posts by title.
+
+- **Pagination:**  
+  Posts are displayed 5 per page, with easy navigation between pages.
 
 - **Persistent Storage:**  
-  All posts are saved in the browser’s `localStorage` for persistence across sessions.
+  All posts and the selected category are saved in the browser’s `localStorage` for persistence across sessions.
 
 - **Responsive Design:**  
   Fully responsive layout for mobile, tablet, and desktop.
 
 - **Dark Mode:**  
-  Toggle between light and dark themes using Tailwind CSS’s dark mode.
+  Toggle between light and dark themes using Tailwind CSS’s dark mode. The preference is saved and restored automatically.
 
 - **Material UI Integration:**  
   Uses Material UI icons and dialogs for a polished user experience.
@@ -45,7 +51,7 @@ Users can create, edit, view, and delete posts, filter by category, and enjoy a 
 - **React Router DOM** – Client-side routing
 - **Tailwind CSS** – Utility-first CSS framework for styling and dark mode
 - **Material UI** – UI components and icons
-- **localStorage** – Browser storage for persisting posts
+- **localStorage** – Browser storage for persisting posts and preferences
 - **Vite** (or Create React App) – Fast development server and build tool
 
 ---
@@ -115,6 +121,7 @@ myBlog/
   The dark mode toggle adds/removes the `dark` class on the `<html>` element.
 - **Material UI** is used for icons and dialogs, styled to match both light and dark themes.
 - **SnackbarProvider** context provides global notifications across all pages.
+- **localStorage** is used to persist posts, selected category, and dark mode preference.
 
 ---
 
